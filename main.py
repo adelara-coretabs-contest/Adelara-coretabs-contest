@@ -46,6 +46,11 @@ dummy_products = [
     ),
 ]
 
+for product in dummy_products:
+    print(product.name)
+    for ing in product.descr:
+        print(ing)
+
 @app.route('/')
 def index():
-    return render_template('index.html', hello='Hello Adelara clients')
+    return render_template('index.html', products=dummy_products)

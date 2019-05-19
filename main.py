@@ -46,10 +46,9 @@ dummy_products = [
     ),
 ]
 
-for product in dummy_products:
-    print(product.name)
-    for ing in product.descr:
-        print(ing)
+products = ProductStore(dummy_products)
+products.get_all()
+
 
 @app.route('/')
 def index():

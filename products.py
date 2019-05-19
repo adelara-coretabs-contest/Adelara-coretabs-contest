@@ -14,7 +14,17 @@ class ProductStore:
 
     def get_all(self):
         for product in self.products:
-            print(str(product.id) + '-' + product.name + ': ' + product.descr)
+            print('******************')
+            print(str(product.id) + '-' + product.name + '.')
+            print('\tPrice: ' + str(product.price) + 'DZD')
+
+            count = 0
+            print('\tIngredient: ')
+            for ing in product.descr:
+                count += 1
+                print('\t\t' + str(count) + '- ' + ing)
+            print('******************\n')
+
         return self.products
 
     def add(self, product):

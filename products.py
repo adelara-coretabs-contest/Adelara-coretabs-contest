@@ -27,6 +27,17 @@ class ProductStore:
 
         return self.products
 
+    def get_details(self, id):
+        result = 'Sorry, there\'s no product matching your request!!'
+
+        for product in self.products:
+            if product.id == id:
+                result = product
+                break
+
+        return result
+
+
     def add(self, product):
 
         return self.products.append(product)

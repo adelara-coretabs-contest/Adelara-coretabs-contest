@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adelara</title>
+    <title>Adelara|{{product.name}}</title>
 </head>
 <body>
-    <h1>Products</h1>
+    <h1>Product details</h1>
     <div>
-        {% for product in products %}
             <h2>{{product.name}}</h2>
             <div>
                 <img src="{{product.photo_url}}" alt="{{product.name}}" width="128">
@@ -20,8 +19,7 @@
                     <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
-            <a id="{{product.id}}" href="{{ url_for('details', id=product.id)}}">details</a>
-        {% endfor %}
+
     </div>
 </body>
 </html>

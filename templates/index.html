@@ -7,20 +7,20 @@
     <title>Adelara</title>
 </head>
 <body>
-    <h1>Products</h1>
+    <h1>Meals</h1>
     <div>
-        {% for product in products %}
-            <h2>{{product.name}}</h2>
+        {% for meal in meals %}
+            <h2>{{meal.name}}</h2>
             <div>
-                <img src="{{product.photo_url}}" alt="{{product.name}}" width="128">
+                <img src="{{meal.photo_url}}" alt="{{meal.name}}" width="128">
             </div>
-            <div>Price: {{product.price}} DZD</div>
+            <div>Price: {{meal.price}} DZD</div>
             <ul>
-                {% for ingredient in product.descr %}
+                {% for ingredient in meal.descr %}
                     <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
-            <a id="{{product.id}}" href="{{ url_for('details', id=product.id)}}">details</a>
+            <a id="{{meal.id}}" href="{{ url_for('details', id=meal.id)}}">details</a>
         {% endfor %}
     </div>
 </body>

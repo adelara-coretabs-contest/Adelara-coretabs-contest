@@ -1,10 +1,10 @@
 from flask import Flask, render_template, url_for, request
-from products import Products, ProductStore
+from meals import Meals, MealsStore
 
 app = Flask(__name__)
 
-dummy_products = [
-    Products(
+dummy_meals = [
+    Meals(
         1,
         'Pizza',
         1,
@@ -16,7 +16,7 @@ dummy_products = [
         'https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         200
     ),
-    Products(
+    Meals(
         2,
         'Sandwich',
         1,
@@ -30,7 +30,7 @@ dummy_products = [
         'https://images.pexels.com/photos/357746/pexels-photo-357746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         140
     ),
-    Products(
+    Meals(
         3,
         'Hamburger',
         1,
@@ -46,18 +46,18 @@ dummy_products = [
     ),
 ]
 
-products = ProductStore(dummy_products)
-products.get_all()
+meals = MealsStore(dummy_meals)
+meals.get_all()
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', products=dummy_products)
+    return render_template('index.html', meals=dummy_meals)
 
 
 @app.route('/details/<int:id>', methods=["GET", "POST"])
 def details(id):
     if request.method == "GET":
-        product = products.get_details(id)
-        return render_template('details.html', product=product)
+        meal = meals.get_details(id)
+        return render_template('details.html', meal=meal)
 

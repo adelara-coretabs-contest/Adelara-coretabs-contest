@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adelara|{{product.name}}</title>
+    <title>Adelara|{{meal.name}}</title>
 </head>
 <body>
-    <h1>Product details</h1>
+    <h1>{{meal.name}} details</h1>
     <div>
-            <h2>{{product.name}}</h2>
+            <h2>{{meal.name}}</h2>
             <div>
-                <img src="{{product.photo_url}}" alt="{{product.name}}" width="128">
+                <img src="{{meal.photo_url}}" alt="{{meal.name}}" width="128">
             </div>
-            <div>Price: {{product.price}} DZD</div>
+            <div>Price: {{meal.price}} DZD</div>
             <ul>
-                {% for ingredient in product.descr %}
+                {% for ingredient in meal.descr %}
                     <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>

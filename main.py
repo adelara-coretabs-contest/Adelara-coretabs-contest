@@ -61,24 +61,31 @@ orders.get_all()
 def index():
     return render_template('index.html', meals=dummy_meals)
 
+@app.route('/404')
+def oops():
+    return render_template('404.html')
+
 
 app.current_id = 1
 @app.route('/details/<int:id>', methods=["GET", "POST"])
 def details(id):
     meal = meals.get_details(id)
-    if request.method == "GET":
-        return render_template('details.html', meal=meal)
 
-    elif request.method == "POST":
-        new_order = Orders(id=app.current_id,
-                        meal=meal,
-                        quantity=int(request.form["quantity"]),
-                        user=request.form["user"],
-                        address=request.form["address"],
-                        date = 'today')
-        app.current_id += 1
-        orders.add(new_order)
-        orders.get_all()
-        return redirect(url_for("index"))
+    if hasattr(meal, 'id'):
+        if request.method == "GET":
+            return render_template('details.html', meal=meal)
 
+        elif request.method == "POST":
+            new_order = Orders(id=app.current_id,
+                               meal=meal,
+                               quantity=int(request.form["quantity"]),
+                               user=request.form["user"],
+                               address=request.form["address"],
+                               date='today')
+            app.current_id += 1
+            orders.add(new_order)
+            orders.get_all()
+            return redirect(url_for("index"))
 
+    else:
+        return redirect(url_for('oops'))

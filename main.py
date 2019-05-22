@@ -93,3 +93,22 @@ def details(id):
 @app.route('/orders')
 def list_orders():
     return render_template('orders.html', orders=dummy_orders)
+
+@app.route('/add', methods=["GET", "POST"])
+def add_meal():
+    last_meal_id = dummy_meals[-1].id
+    if request.method == "POST":
+        last_meal_id += 1
+        new_meal = Meals(id=last_meal_id,
+                         name=request.form["name"],
+                         cat=1,
+                         descr=['ing1', 'ing2', 'ing3'],
+                         photo_url=request.form["photo"],
+                         price=request.form["price"]
+                         )
+        meals.add(new_meal)
+        meals.get_all()
+        return redirect(url_for("index"))
+    elif request.method == "GET":
+        return render_template('add-meal.html')
+

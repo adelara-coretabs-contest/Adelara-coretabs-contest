@@ -19,6 +19,12 @@
                     <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
+            <form action="{{url_for('details', id=meal.id)}}" method="POST">
+                <input type="text" name="user" id="" placeholder="Please enter your name">
+                <input type="text" name="quantity" id="" placeholder="Enter quantity here!">
+                <textarea name="address" id="" cols="30" rows="10" placeholder="Type your address here!"></textarea>
+                <input type="submit" value="Create" id="button">
+            </form>
 
     </div>
 </body>

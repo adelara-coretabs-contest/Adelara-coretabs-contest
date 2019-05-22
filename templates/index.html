@@ -23,5 +23,8 @@
             <a id="{{meal.id}}" href="{{ url_for('details', id=meal.id)}}">details</a>
         {% endfor %}
     </div>
+    <div>
+        <a href="{{ url_for('list_orders') }}">List of orders</a>
+    </div>
 </body>
 </html>

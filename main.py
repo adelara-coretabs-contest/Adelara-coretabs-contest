@@ -89,3 +89,7 @@ def details(id):
 
     else:
         return redirect(url_for('oops'))
+
+@app.route('/orders')
+def list_orders():
+    return render_template('orders.html', orders=dummy_orders)

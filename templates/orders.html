@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adelara</title>
+</head>
+<body>
+    <h1>List of orders</h1>
+    <div>
+        {% for order in orders %}
+            <h2>Client: {{order.user}}</h2>
+            <div>Meal: {{order.meal_name}}</div>
+            <div>Quantity: {{order.quantity}}</div>
+            <div>Amount: ${{order.amount}}</div>
+            <div>Address: {{order.address}}</div>
+            <div>Date: {{order.date}}</div>
+
+            <a id="{{order.id}}" href="{{ url_for('index')}}">Back</a>
+        {% endfor %}
+    </div>
+</body>
+</html>

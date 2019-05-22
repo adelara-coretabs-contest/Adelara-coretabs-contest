@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block meals%}
+    <h1>Meals</h1>
+    <div>
+        {% for meal in meals %}
+            <h2>{{meal.name}}</h2>
+            <div>
+                <img src="{{meal.photo_url}}" alt="{{meal.name}}" width="128">
+            </div>
+            <div>Price: {{meal.price}} DZD</div>
+            <ul>
+                {% for ingredient in meal.descr %}
+                    <li>{{ingredient}}</li>
+                {% endfor %}
+            </ul>
+            <a id="{{meal.id}}" href="{{ url_for('details', id=meal.id)}}">details</a>
+        {% endfor %}
+    </div>
+{% endblock %}

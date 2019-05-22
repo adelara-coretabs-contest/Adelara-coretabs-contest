@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adelara</title>
+    {% endblock %}
 </head>
 <body>
-    <h1>Meals</h1>
     <div>
-        {% for meal in meals %}
-            <h2>{{meal.name}}</h2>
-            <div>
-                <img src="{{meal.photo_url}}" alt="{{meal.name}}" width="128">
-            </div>
-            <div>Price: {{meal.price}} DZD</div>
-            <ul>
-                {% for ingredient in meal.descr %}
-                    <li>{{ingredient}}</li>
-                {% endfor %}
-            </ul>
-            <a id="{{meal.id}}" href="{{ url_for('details', id=meal.id)}}">details</a>
-        {% endfor %}
+        <a href="#">I'm the Admin</a>
     </div>
+    {% block meals %}
+    {% endblock %}
+
     <div>
-        <a href="{{ url_for('list_orders') }}">List of orders</a>
-        <a href="{{ url_for('add_meal') }}">Add a new meal</a>
+        {% block admin_conrols %}
+        {% endblock %}
     </div>
 </body>
 </html>

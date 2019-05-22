@@ -59,7 +59,7 @@ orders.get_all()
 
 @app.route('/')
 def index():
-    return render_template('index.html', meals=dummy_meals)
+    return render_template('list-meals.html', meals=dummy_meals)
 
 @app.route('/404')
 def oops():

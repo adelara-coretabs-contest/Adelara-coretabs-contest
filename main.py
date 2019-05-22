@@ -99,16 +99,18 @@ def add_meal():
     last_meal_id = dummy_meals[-1].id
     if request.method == "POST":
         last_meal_id += 1
+        ings = request.form.getlist("ings[]")
         new_meal = Meals(id=last_meal_id,
                          name=request.form["name"],
                          cat=1,
-                         descr=['ing1', 'ing2', 'ing3'],
+                         descr=ings,
                          photo_url=request.form["photo"],
-                         price=request.form["price"]
+                         price=int(request.form["price"])
                          )
         meals.add(new_meal)
         meals.get_all()
         return redirect(url_for("index"))
+
     elif request.method == "GET":
         return render_template('add-meal.html')
 

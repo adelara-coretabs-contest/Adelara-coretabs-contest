@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request
 from meals import Meals, MealsStore
+from orders import Orders, OrdersStore
 
 app = Flask(__name__)
 
@@ -48,6 +49,13 @@ dummy_meals = [
 
 meals = MealsStore(dummy_meals)
 meals.get_all()
+
+
+dummy_orders = []
+orders = OrdersStore(dummy_orders)
+orders.add(Orders(1, dummy_meals[0], 3, 'Adel', 'today'))
+orders.get_all()
+
 
 
 @app.route('/')

@@ -16,9 +16,8 @@
             <div>Amount: ${{order.amount}}</div>
             <div>Address: {{order.address}}</div>
             <div>Date: {{order.date.hour}}: {{order.date.minute}}</div>
-
-            <a id="{{order.id}}" href="{{ url_for('index')}}">Back</a>
         {% endfor %}
+            <a id="back" href="{{ url_for('index')}}">Back</a>
     </div>
 </body>
 </html>

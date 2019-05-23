@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adelara</title>
-</head>
-<body>
-    <h1>Meals</h1>
-    <div>
-        {% for meal in meals %}
-            <h2>{{meal.name}}</h2>
-            <div>
-                <img src="{{meal.photo_url}}" alt="{{meal.name}}" width="128">
-            </div>
-            <div>Price: ${{meal.price}}</div>
-            <ul>
-                {% for ingredient in meal.descr %}
-                    <li>{{ingredient}}</li>
-                {% endfor %}
-            </ul>
-            <a id="{{meal.id}}-det" href="{{ url_for('details', id=meal.id)}}">details</a>
-            <a id="{{meal.id}}-rem" href="{{ url_for('meal_remove', id=meal.id)}}">Remove</a>
-            <a id="{{meal.id}}-upd" href="{{ url_for('meal_update', id=meal.id)}}">Update</a>
-        {% endfor %}
-    </div>
-    <div>
-        <a href="{{ url_for('list_orders') }}">List of orders</a>
-        <a href="{{ url_for('add_meal') }}">Add a new meal</a>
-    </div>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block index %}
+
+<h1>Meals</h1>
+<div>
+    {% block meals %}
+    {% endblock %}
+</div>
+<div>
+    {% if admin %}
+    <a href="{{ url_for('list_orders') }}">List of orders</a>
+    <a href="{{ url_for('add_meal') }}">Add a new meal</a>
+    {% endif %}
+</div>
+{% endblock %}

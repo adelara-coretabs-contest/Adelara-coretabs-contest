@@ -43,5 +43,6 @@ class MealsStore:
     def remove(self, id):
         meal = self.get_details(id)
         self.meals.remove(meal)
-        print(Meals.name + 'is deleted')
+        print(meal.name + ' is deleted')
+        return self.meals
 

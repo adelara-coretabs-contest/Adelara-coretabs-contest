@@ -114,3 +114,7 @@ def add_meal():
     elif request.method == "GET":
         return render_template('add-meal.html')
 
+@app.route('/posts/delete/<int:id>')
+def meal_remove(id):
+    meals.remove(id)
+    return redirect(url_for("index"))

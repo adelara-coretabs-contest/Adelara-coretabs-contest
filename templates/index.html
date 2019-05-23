@@ -20,7 +20,8 @@
                     <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
-            <a id="{{meal.id}}" href="{{ url_for('details', id=meal.id)}}">details</a>
+            <a id="{{meal.id}}-det" href="{{ url_for('details', id=meal.id)}}">details</a>
+            <a id="{{meal.id}}-rem" href="{{ url_for('meal_remove', id=meal.id)}}">Remove</a>
         {% endfor %}
     </div>
     <div>

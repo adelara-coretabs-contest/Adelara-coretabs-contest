@@ -1,0 +1,389 @@
+body {
+    margin: 0;
+    font-family: 'Handlee', cursive;
+    font-size: 1.5em;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #f3fff1;
+    z-index: 100;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#loader img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loaded {
+    opacity: 1;
+    display: none !important;
+}
+
+.header {
+    text-align: center;
+}
+
+
+
+header, footer {
+    width: 100%;
+    background-color: #fff;
+}
+
+#nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+#nav, footer {
+    background-color: rgba(52, 52, 52, .6);
+    box-shadow: #333 1px .2px 8px;
+}
+
+#adelara-title {
+    font-size: 1em;
+    color: #fff;
+}
+
+#adelara-title span{
+}
+
+#logo {
+    margin: auto 15px;
+}
+
+#logo img{
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu {
+    width: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#hamburger-menu div {
+    height: 4px;
+    margin: 2px 0;
+    background-color: #fff;
+    transition: all .3s ease;
+}
+
+#hamburger-menu:hover div {
+    background-color: brown;
+}
+
+.close > div:nth-of-type(even) {
+    opacity: 0;
+}
+.close > div:first-child {
+    transform: translate(6px, -2px) rotate(-45deg);
+}
+.close > div:last-child {
+    transform: translate(6px, -18px) rotate(45deg);
+}
+
+#banner {
+    width: 100%;
+    height: 100vh;
+    background-color: #e0f3dd;
+    /* background-image: url('../img/shape7.svg'); */
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 1.2em;    
+}
+
+
+#banner img {
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    width: auto;
+    height: 82vh;
+    
+}
+
+#hangry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #599d7b;
+    margin: 0 auto;
+}
+
+#hangry h2 {
+    font-size: 2em;
+    font-weight: bolder;
+    font-family: 'Homemade Apple', cursive;
+}
+
+#hangry p {
+    font-size: 1em;
+    color: #333;
+}
+
+#hangry p span{
+    font-weight: bold;
+}
+
+#hangry h2, #hangry p {
+    margin: 0;
+}
+#scroll-down {
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+#scroll-down {
+    width: 25px;
+    height: 25px;
+    border-bottom: 2px solid #599d7b;
+    border-left: 2px solid #599d7b;
+    position: relative;
+    margin: 55px auto;
+    cursor: pointer;
+    transform: rotate(-45deg);
+}
+
+#line {
+    
+    margin: 0 auto;
+    position: relative;
+}
+
+#line img {
+    position: relative;
+    top: -40px;
+}
+
+.menu {
+    max-width: 1170px;
+    margin: 40px auto;
+    justify-content: center;
+    display: flex;
+    flex-flow: wrap
+}
+
+
+.meal-details {
+    margin: 100px auto; 
+    width: 80%;
+    height: auto;
+    flex-direction: column;
+}
+
+#details figure img{
+    width: 300px;
+}
+
+.order-button {
+    color: #333;
+    border: #333 1px solid;
+}
+
+#ingredients {
+    list-style: none;
+}
+
+.container-item {
+    width: 236px;
+    margin: 28px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 7px;
+}
+
+.item figure {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.item figcaption {
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: rgba(74, 111, 67, 0.7);
+    height: 0;
+    width: 100%;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.item figcaption div {
+    color: #fff;
+}
+
+.details-button {
+    border: #fff 1px solid;
+}
+
+.details-button, .order-button {
+    width: 90px;
+    margin: 64px auto;
+    padding: 2px 0;
+    border-radius: 5px;
+    font-size: .7em;
+    
+}
+
+.details-button:hover {
+    background-color: #fff;
+    color: rgba(74, 111, 67, 0.9);
+}
+
+.price {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    z-index: 11;
+    font-size: .8em;
+}
+
+.item:hover {
+    overflow: visible;
+}
+
+.item:hover figcaption {
+    top: 0;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease;
+}
+
+.title {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin: auto 0;
+    color: #fff;
+    background-color: rgba(52, 52, 52, .7);
+    padding: 7px 0;
+    z-index: 10;
+    font-size: .9em;    
+}
+
+.item:hover img {
+    transform: scale(1.06);
+    -webkit-transform: scale(1.06);
+}
+
+.item figcaption div {
+    -webkit-transition: top .7s ease;
+    -moz-transition: top .7s ease;
+    transition: top .7s ease;
+    -webkit-transition-delay: .7s;
+    transition-delay: .7s;
+}
+
+.item:hover figcaption div {
+    display: block;
+}
+
+.testim {
+    width: 100%;
+    height: 200px;
+    z-index: 10;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;    
+}
+
+.image {
+    height: auto;
+    /* position: absolute; */
+}
+
+.top-left {
+    top: 5px;
+    left: 5px;
+}
+
+.right {
+    right: 10px;
+}
+
+.bottom-center {
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.absolute {
+    position: absolute;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+#made-by {
+    margin-left: 10px
+}
+
+#made-by span:first-child {
+    color: #bf0808;
+}
+
+#coretabs {
+    margin-right: 10px
+}
+
+@media only screen and (max-width: 600px) {
+    #hangry {
+      left: 20%;
+    }
+  }

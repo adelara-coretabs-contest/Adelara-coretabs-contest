@@ -37,7 +37,11 @@ class MealsStore:
         print(result)
         return result
 
-
     def add(self, meal):
-
         return self.meals.append(meal)
+
+    def remove(self, id):
+        meal = self.get_details(id)
+        self.meals.remove(meal)
+        print(Meals.name + 'is deleted')
+

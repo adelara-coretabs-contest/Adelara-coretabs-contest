@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect
 from meals import Meals, MealsStore
 from orders import Orders, OrdersStore
+import datetime
 
 app = Flask(__name__)
 
@@ -81,7 +82,7 @@ def details(id):
                                quantity=int(request.form["quantity"]),
                                user=request.form["user"],
                                address=request.form["address"],
-                               date='today')
+                               date= datetime.datetime.now())
             app.current_id += 1
             orders.add(new_order)
             orders.get_all()
@@ -118,7 +119,7 @@ def add_meal():
 @app.route('/remove/meal<int:id>')
 def meal_remove(id):
     meals.remove(id)
-    return redirect(url_for("index"))\
+    return redirect(url_for("index"))
 
 
 @app.route('/update/meal<int:id>', methods=["GET", "POST"])

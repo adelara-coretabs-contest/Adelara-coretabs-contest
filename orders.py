@@ -23,6 +23,7 @@ class OrdersStore:
             print('\tQuantity: ' + str(order.quantity))
             print('\tAmount: $' + str(order.amount))
             print('\tAddress: ' + order.address)
+            print('\tDate: ' + str(order.date))
         return self.orders
 
     def get_order(self, id):

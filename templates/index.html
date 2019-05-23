@@ -22,6 +22,7 @@
             </ul>
             <a id="{{meal.id}}-det" href="{{ url_for('details', id=meal.id)}}">details</a>
             <a id="{{meal.id}}-rem" href="{{ url_for('meal_remove', id=meal.id)}}">Remove</a>
+            <a id="{{meal.id}}-upd" href="{{ url_for('meal_update', id=meal.id)}}">Update</a>
         {% endfor %}
     </div>
     <div>

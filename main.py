@@ -94,7 +94,7 @@ def details(id):
 def list_orders():
     return render_template('orders.html', orders=dummy_orders)
 
-@app.route('/add', methods=["GET", "POST"])
+@app.route('/add/meal', methods=["GET", "POST"])
 def add_meal():
     last_meal_id = dummy_meals[-1].id
     if request.method == "POST":
@@ -114,7 +114,28 @@ def add_meal():
     elif request.method == "GET":
         return render_template('add-meal.html')
 
-@app.route('/posts/delete/<int:id>')
+
+@app.route('/remove/meal<int:id>')
 def meal_remove(id):
     meals.remove(id)
-    return redirect(url_for("index"))
+    return redirect(url_for("index"))\
+
+
+@app.route('/update/meal<int:id>', methods=["GET", "POST"])
+def meal_update(id):
+    if request.method == 'POST':
+        ings = request.form.getlist("ings[]")
+        update_fields = {
+            'name': request.form['name'],
+            'cat': int(request.form['cat']),
+            'descr': ings,
+            'photo_url': request.form['photo'],
+            'price': int(request.form['price'])
+        }
+
+        meals.update(id, update_fields)
+
+        return redirect(url_for("index"))
+    elif request.method == 'GET':
+        meal = meals.get_details(id)
+        return render_template('update-meal.html', meal=meal)

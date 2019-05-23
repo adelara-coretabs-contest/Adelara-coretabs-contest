@@ -46,3 +46,12 @@ class MealsStore:
         print(meal.name + ' is deleted')
         return self.meals
 
+    def update(self, id, fields):
+        meal = self.get_details(id)
+        meal.name = fields['name']
+        meal.cat = fields['cat']
+        meal.descr = fields['descr']
+        meal.photo_url = fields['photo_url']
+        meal.price = fields['price']
+
+

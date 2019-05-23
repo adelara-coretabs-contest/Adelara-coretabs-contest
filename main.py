@@ -5,6 +5,8 @@ import datetime
 
 app = Flask(__name__)
 
+
+
 dummy_meals = [
     Meals(
         1,
@@ -60,21 +62,24 @@ orders.get_all()
 
 @app.route('/')
 def index():
-    return render_template('meals.html', admin=False, meals=dummy_meals)
+    title = 'Adelara fast-food chef'
+    return render_template('meals.html', admin=True, meals=dummy_meals, title=title)
 
 @app.route('/404')
 def oops():
-    return render_template('404.html')
+    title = "Oops"
+    return render_template('404.html' ,title=title)
 
 
 app.current_id = 1
 @app.route('/details/<int:id>', methods=["GET", "POST"])
 def details(id):
     meal = meals.get_details(id)
+    title = 'Adelara|'+meal.name
 
     if hasattr(meal, 'id'):
         if request.method == "GET":
-            return render_template('details.html', meal=meal)
+            return render_template('details.html', meal=meal, title=title)
 
         elif request.method == "POST":
             new_order = Orders(id=app.current_id,
@@ -93,10 +98,12 @@ def details(id):
 
 @app.route('/orders')
 def list_orders():
-    return render_template('orders.html', orders=dummy_orders)
+    title = 'Adelara|Order'
+    return render_template('orders.html', orders=dummy_orders, title=title)
 
 @app.route('/add/meal', methods=["GET", "POST"])
 def add_meal():
+    title = 'Adelara|Add new meal'
     last_meal_id = dummy_meals[-1].id
     if request.method == "POST":
         last_meal_id += 1
@@ -113,7 +120,7 @@ def add_meal():
         return redirect(url_for("index"))
 
     elif request.method == "GET":
-        return render_template('add-meal.html')
+        return render_template('add-meal.html', title=title)
 
 
 @app.route('/remove/meal<int:id>')
@@ -139,4 +146,5 @@ def meal_update(id):
         return redirect(url_for("index"))
     elif request.method == 'GET':
         meal = meals.get_details(id)
-        return render_template('update-meal.html', meal=meal)
+        title = 'Adelara|Update '+meal.name
+        return render_template('update-meal.html', meal=meal, title=title)

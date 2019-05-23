@@ -15,7 +15,7 @@ dummy_meals = [
             'Olive',
         ],
         'https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-        200
+        8
     ),
     Meals(
         2,
@@ -29,7 +29,7 @@ dummy_meals = [
             'Salade'
         ],
         'https://images.pexels.com/photos/357746/pexels-photo-357746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-        140
+        5
     ),
     Meals(
         3,
@@ -43,7 +43,7 @@ dummy_meals = [
             'Salade'
         ],
         'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-        120
+        3
     ),
 ]
 

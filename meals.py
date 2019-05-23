@@ -16,7 +16,7 @@ class MealsStore:
         for meal in self.meals:
             print('******************')
             print(str(meal.id) + '-' + meal.name + '.')
-            print('\tPrice: ' + str(meal.price) + 'DZD')
+            print('\tPrice: $' + str(meal.price))
 
             count = 0
             print('\tIngredient: ')

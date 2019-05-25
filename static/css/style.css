@@ -265,10 +265,9 @@ header, footer {
 
 #ingredients {
     margin: 0 20px;
-    overflow-y: scroll;
 }
 
-#ingredients::-webkit-scrollbar {
+#ingredients ul::-webkit-scrollbar {
     width: 0;
 }
 
@@ -276,6 +275,8 @@ header, footer {
     list-style: none;
     border-radius: 28px;
     font-size: .8em;
+    overflow-y: scroll;
+    height: 110px;
 }
 
 #ingredients h5 {

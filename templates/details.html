@@ -7,7 +7,7 @@
             <div id="details" class="flex">
                 <figure>
                     <div>
-                        <img id="cloud" src="img/cloud-v.png" alt="">
+                        <img id="cloud" src="{{ url_for('static', filename='img/cloud-v.png') }}" alt="">
                     </div>
                     <img id="meal-pic" src="{{meal.photo_url}}" alt="{{meal.name}}">
                 </figure>

@@ -24,13 +24,18 @@
                         <h4 class="title" id="pizza">{{meal.name}}</h4>
                     </figure>
                     <figcaption class="">
-                        <div class="price" id="{{meal.name}}-price">${{meal.price}}</div>
+                        {% if admin %}                        
+                        <a id="{{meal.id}}-upd" href="{{ url_for('meal_update', id=meal.id)}}">
+                            <div class="details-button">Update</div>
+                        </a>
+                        <a id="{{meal.id}}-rem" class="remove" href="{{ url_for('meal_remove', id=meal.id)}}">
+                                <div class="price" id="{{meal.name}}-price">x</div>
+                        </a>
+                        {% else %}
                         <a id="{{meal.id}}-det" href="{{ url_for('details', id=meal.id)}}">
                             <div class="details-button">Details</div>
+                            <div class="price" id="{{meal.name}}-price">${{meal.price}}</div>
                         </a>
-                        {% if admin %}
-                        <a id="{{meal.id}}-rem" href="{{ url_for('meal_remove', id=meal.id)}}">Remove</a>
-                        <a id="{{meal.id}}-upd" href="{{ url_for('meal_update', id=meal.id)}}">Update</a>
                         {% endif %}
                     </figcaption>
                 </div>

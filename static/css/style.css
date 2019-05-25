@@ -11,6 +11,12 @@ a {
     text-decoration: none;
 }
 
+.remove div {
+    color: red !important;
+    font-size: 46px;
+    margin: -18px 8px;
+}
+
 #loader {
     position: fixed;
     top: 0;

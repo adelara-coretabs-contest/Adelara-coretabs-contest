@@ -1,31 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
-</head>
-<body>
-    <h1>{{meal.name}} details</h1>
-    <div>
-            <h2>{{meal.name}}</h2>
-            <div>
-                <img src="{{meal.photo_url}}" alt="{{meal.name}}" width="128">
-            </div>
-            <div>Price: ${{meal.price}}</div>
-            <ul>
-                {% for ingredient in meal.descr %}
-                    <li>{{ingredient}}</li>
-                {% endfor %}
-            </ul>
-            <form action="{{url_for('details', id=meal.id)}}" method="POST">
-                <input type="text" name="user" id="" placeholder="Please enter your name">
-                <input type="text" name="quantity" id="" placeholder="Enter quantity here!">
-                <textarea name="address" id="" cols="30" rows="10" placeholder="Type your address here!"></textarea>
-                <input type="submit" value="Create" id="button">
-            </form>
+{% extends 'base.html' %}
 
-    </div>
-</body>
-</html>
+{% block content %}
+    <main id="meal" class="menu">
+
+        <div class="meal-details shadow" id="">
+            <div id="details" class="flex">
+                <figure>
+                    <div>
+                        <img id="cloud" src="img/cloud-v.png" alt="">
+                    </div>
+                    <img id="meal-pic" src="{{meal.photo_url}}" alt="{{meal.name}}">
+                </figure>
+                <figcaption class="">
+                    <h4 class="" id="meal-name">{{meal.name}}</h4>
+                    <div class="" id="meal-price">
+                        <div class="center">${{meal.price}}</div>
+                    </div>
+                    <div id="ingredients">
+                        <h5>Ingredients</h5>
+                        <ul>
+                            {% for ingredient in meal.descr %}
+                            <li>{{ingredient}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="submit-button" id="submit-button" onclick="toggleForm('submit-button')">Order now</div>
+                    <div class="form hidden">
+                        <h4>Please, tell us where you are?</h4>
+                        <form id="order-form"autocomplete="off" action="{{url_for('details', id=meal.id)}}" method="POST">
+                            <input required type="text" name="user" id="inpt-user-name" placeholder="Please enter your name">
+                            <input required type="number" min="1" name="quantity" id="inpt-quantity" placeholder="Enter quantity here!">
+                            <textarea required name="address" id="address" cols="30" rows="4" placeholder="Type your address here!"></textarea>
+                            <input id="order-button" class="submit-button" type="submit" value="Create" id="button">
+                        </form>
+                    </div>
+            
+                </figcaption>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -28,6 +28,14 @@
                 <div></div>
             </div>
         </nav>
+        <div id="nav-menu" class="closed">
+            {% if admin %}
+            <a href="{{ url_for('list_orders') }}">List of orders</a>
+            <a href="{{ url_for('add_meal') }}">Add a new meal</a>
+            {% else %}
+            <a href="{{ url_for('add_meal') }}">I'm Admin</a>
+            {% endif %}
+        </div>
     </header>
     {% endblock %}
     {% block main %}

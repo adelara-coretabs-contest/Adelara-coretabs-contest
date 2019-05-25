@@ -9,6 +9,7 @@ body {
 
 a {
     text-decoration: none;
+    color: #fff;
 }
 
 .remove div {
@@ -68,6 +69,19 @@ header, footer {
 #nav, footer {
     background-color: rgba(52, 52, 52, .6);
     box-shadow: #333 1px .2px 8px;
+}
+
+#nav-menu {
+    position: absolute;
+    width: 275px;
+    height: 100vh;
+    background-color: #599d7b;
+    margin-top: 72px;
+    right: 0;
+}
+
+.closed {
+    display: none;
 }
 
 #adelara-title {

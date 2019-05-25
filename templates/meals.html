@@ -1,18 +1,44 @@
 {% extends 'index.html' %}
 {% block meals %}
-{% for meal in meals %}
-<h2>{{meal.name}}</h2>
-<div>
-    <img src="{{meal.photo_url}}" alt="{{meal.name}}" width="128">
-</div>
-<div>Price: ${{meal.price}}</div>
-<ul>
-    {% for ingredient in meal.descr %}
-        <li>{{ingredient}}</li>
-    {% endfor %}
-</ul>
-<a id="{{meal.id}}-det" href="{{ url_for('details', id=meal.id)}}">details</a>
-<a id="{{meal.id}}-rem" href="{{ url_for('meal_remove', id=meal.id)}}">Remove</a>
-<a id="{{meal.id}}-upd" href="{{ url_for('meal_update', id=meal.id)}}">Update</a>
-{% endfor %}
-{% endblock %}
+
+    {% block banner %}
+    <div id="banner">
+        <img id="mr-chef" src="{{ url_for('static', filename='img/chef-playing.png') }}" alt="">
+        <div id="hangry">
+            <h2>Hangry?!</h2>
+            <p>Cool, we're here to <span>serve</span> you!</p>
+            <div id="scroll-down" onclick="scrollToMeals()"></div>
+        </div>
+    </div>
+    <div id="line">
+        <img src="{{ url_for('static', filename='img/cloud.png') }}" alt="">
+    </div>
+    {% endblock %}
+    <main class="menu">
+        
+        {% for meal in meals %}
+            <div class="container-item" id="1">
+                <div class="item">
+                    <figure>
+                        <img class="" src="{{meal.photo_url}}" alt="drinks">
+                        <h4 class="title" id="pizza">{{meal.name}}</h4>
+                    </figure>
+                    <figcaption class="">
+                        <div class="price" id="{{meal.name}}-price">${{meal.price}}</div>
+                        <a id="{{meal.id}}-det" href="{{ url_for('details', id=meal.id)}}">
+                            <div class="details-button">Details</div>
+                        </a>
+                        {% if admin %}
+                        <a id="{{meal.id}}-rem" href="{{ url_for('meal_remove', id=meal.id)}}">Remove</a>
+                        <a id="{{meal.id}}-upd" href="{{ url_for('meal_update', id=meal.id)}}">Update</a>
+                        {% endif %}
+                    </figcaption>
+                </div>
+            </div>
+        {% endfor %}
+        {% endblock %}
+
+        </main>
+        <div class="testim">
+            
+        </div>

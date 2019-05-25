@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
+    <title>Details</title>
+    <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     {% block header %}
+    <div id="loader">
+        <img id="loading" src="{{ url_for('static', filename='img/loading.png') }}" alt="loading">
+    </div>
+    <header class="header">
+        <nav id="nav" class="flex">
+            <div id="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='img/chef.png') }}" alt="">
+                </a>
+            </div>
+            <h1 id="adelara-title">AdeLara - <span>FoodChef</span></h1>
+            <div id="hamburger-menu" class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
     {% endblock %}
     {% block main %}
     {% block index %}
@@ -15,5 +36,7 @@
     {% endblock %}
     {% block footer %}
     {% endblock %}
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>

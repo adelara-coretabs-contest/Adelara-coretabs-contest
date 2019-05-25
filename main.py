@@ -13,41 +13,115 @@ dummy_meals = [
         'Pizza',
         1,
         [
-            'Fromage',
-            'Thon',
-            'Olive',
+            'Tomato sauce',
+            'Green olives sliced',
+            'Steaks',
+            'Cheese Almstazarila'
         ],
-        'https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        'https://images.pexels.com/photos/1069449/pexels-photo-1069449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         8
     ),
     Meals(
         2,
-        'Sandwich',
+        'Hamburger',
         1,
         [
-            'Fromage',
-            'Viande Hachée',
-            'Frittes',
-            'Omelette',
-            'Salade'
+            'Minced meat',
+            'Onion slices',
+            'Chesar cheese',
+            'Sliced Tomatoes',
+            'Lettuce',
+            'Filled with French fries and Ketchup sauce'
         ],
-        'https://images.pexels.com/photos/357746/pexels-photo-357746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        'https://images.pexels.com/photos/19642/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         5
     ),
     Meals(
         3,
-        'Hamburger',
+        'French Burger',
         1,
         [
-            'Fromage',
-            'Viande Hachée',
-            'Frittes',
-            'Omelette',
-            'Salade'
+            'Minced meat',
+            'Onion slices ',
+            'Sliced tomatoes',
+            'Letuce',
+            'Pickle',
+            'Tahina',
+            'Mint'
         ],
-        'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        'https://images.pexels.com/photos/47725/hamburger-food-meal-tasty-47725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         3
     ),
+    Meals(
+        4,
+        'Veg Sandwich',
+        1,
+        [
+            'Toast bread',
+            'Chicken breast slices',
+            'Letuce',
+            'Spices'
+        ],
+        'https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        6
+    ),
+    Meals(
+        5,
+        'Simple Pizza',
+        1,
+        [
+            'Tomatoes sauce',
+            'Olive oil',
+            'Wild thyme',
+            'Mayonnaise'
+        ],
+        'https://images.pexels.com/photos/1069450/pexels-photo-1069450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        2
+    ),
+    Meals(
+        6,
+        'Sandwich',
+        1,
+        [
+            'Baked bread in medium size',
+            'Grilled meat',
+            'Colored pepper',
+            'Pickle',
+            'Mayonnaise'
+        ],
+        'https://images.pexels.com/photos/1603898/pexels-photo-1603898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        4
+    ),
+    Meals(
+        7,
+        'Leg chicken',
+        1,
+        [
+            'Minced garlic',
+            'Fish sauce',
+            'Soy sauce',
+            'Spicy grated ginger',
+            'Hot sauce',
+            'Cruched corn flakes'
+        ],
+        'https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        5
+    ),
+    Meals(
+        8,
+        'Fried meat',
+        1,
+        [
+            'Sheep meat slices',
+            'Powder muffins',
+            'Curry',
+            'Spices of sheep meat',
+            'Turmeric'
+        ],
+        'https://images.pexels.com/photos/991967/pexels-photo-991967.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        9
+    )
+
 ]
 
 meals = MealsStore(dummy_meals)

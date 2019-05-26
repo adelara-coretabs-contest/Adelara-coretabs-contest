@@ -191,7 +191,7 @@ def add_meal():
                          )
         meals.add(new_meal)
         meals.get_all()
-        return redirect(url_for("index"))
+        return redirect(url_for("admin_role"))
 
     elif request.method == "GET":
         return render_template('add-meal.html', title=title)
@@ -200,7 +200,7 @@ def add_meal():
 @app.route('/remove/meal<int:id>')
 def meal_remove(id):
     meals.remove(id)
-    return redirect(url_for("index"))
+    return redirect(url_for("admin_role"))
 
 
 @app.route('/update/meal/<int:id>', methods=["GET", "POST"])
@@ -216,7 +216,7 @@ def meal_update(id):
 
         meals.update(id, update_fields)
 
-        return redirect(url_for("index"))
+        return redirect(url_for("admin_role"))
     elif request.method == 'GET':
         meal = meals.get_details(id)
         title = 'Adelara|Update '+meal.name

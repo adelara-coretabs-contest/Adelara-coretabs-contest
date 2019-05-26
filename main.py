@@ -168,7 +168,8 @@ def details(id):
                                quantity=int(request.form["quantity"]),
                                user=request.form["user"],
                                address=request.form["address"],
-                               date= datetime.datetime.now())
+                               date=datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+                               )
             app.current_id += 1
             orders.add(new_order)
             orders.get_all()

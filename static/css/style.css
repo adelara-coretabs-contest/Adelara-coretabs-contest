@@ -155,7 +155,7 @@ header, footer {
 }
 
 
-#banner img {
+#banner img, #not-found img {
     position: absolute;
     left: 10%;
     bottom: 0;
@@ -646,6 +646,14 @@ img {
 #coretabs {
     margin-right: 10px
 }
+
+#not-found {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    
+}
+
 
 @media only screen and (max-width: 600px) {
     #hangry {

@@ -1,3 +1,9 @@
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('service worker registered for Adelara yuppi'))
+      .catch(err => console.log('Oops, service worker not registered', err));
+}
+
 window.addEventListener('load', ()=> {
     let loader = document.querySelector('#loader');
     loader.classList.add('loaded');

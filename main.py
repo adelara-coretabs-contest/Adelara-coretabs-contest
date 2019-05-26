@@ -221,3 +221,8 @@ def meal_update(id):
         meal = meals.get_details(id)
         title = 'Adelara|Update '+meal.name
         return render_template('update-meal.html', meal=meal, title=title)
+
+
+@app.route('/sw.js', methods=['GET'])
+def sw():
+    return app.send_static_file('sw.js')

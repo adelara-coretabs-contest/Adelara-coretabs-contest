@@ -11,7 +11,6 @@ dummy_meals = [
     Meals(
         1,
         'Pizza',
-        1,
         [
             'Tomato sauce',
             'Green olives sliced',
@@ -24,7 +23,6 @@ dummy_meals = [
     Meals(
         2,
         'Hamburger',
-        1,
         [
             'Minced meat',
             'Onion slices',
@@ -39,7 +37,6 @@ dummy_meals = [
     Meals(
         3,
         'French Burger',
-        1,
         [
             'Minced meat',
             'Onion slices ',
@@ -55,7 +52,6 @@ dummy_meals = [
     Meals(
         4,
         'Veg Sandwich',
-        1,
         [
             'Toast bread',
             'Chicken breast slices',
@@ -68,7 +64,6 @@ dummy_meals = [
     Meals(
         5,
         'Simple Pizza',
-        1,
         [
             'Tomatoes sauce',
             'Olive oil',
@@ -81,7 +76,6 @@ dummy_meals = [
     Meals(
         6,
         'Sandwich',
-        1,
         [
             'Baked bread in medium size',
             'Grilled meat',
@@ -95,7 +89,6 @@ dummy_meals = [
     Meals(
         7,
         'Leg chicken',
-        1,
         [
             'Minced garlic',
             'Fish sauce',
@@ -110,7 +103,6 @@ dummy_meals = [
     Meals(
         8,
         'Fried meat',
-        1,
         [
             'Sheep meat slices',
             'Powder muffins',
@@ -192,7 +184,6 @@ def add_meal():
         ings = request.form.getlist("ings[]")
         new_meal = Meals(id=last_meal_id,
                          name=request.form["name"],
-                         cat=1,
                          descr=ings,
                          photo_url=request.form["photo"],
                          price=int(request.form["price"])
@@ -211,13 +202,12 @@ def meal_remove(id):
     return redirect(url_for("index"))
 
 
-@app.route('/update/meal<int:id>', methods=["GET", "POST"])
+@app.route('/update/meal/<int:id>', methods=["GET", "POST"])
 def meal_update(id):
     if request.method == 'POST':
         ings = request.form.getlist("ings[]")
         update_fields = {
             'name': request.form['name'],
-            'cat': int(request.form['cat']),
             'descr': ings,
             'photo_url': request.form['photo'],
             'price': int(request.form['price'])

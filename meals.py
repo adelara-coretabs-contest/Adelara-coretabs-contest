@@ -1,8 +1,7 @@
 class Meals:
-    def __init__(self, id, name, cat, descr, photo_url, price):
+    def __init__(self, id, name, descr, photo_url, price):
         self.id = id
         self.name = name
-        self.cat = cat
         self.descr = descr
         self.photo_url = photo_url
         self.price = price
@@ -49,7 +48,6 @@ class MealsStore:
     def update(self, id, fields):
         meal = self.get_details(id)
         meal.name = fields['name']
-        meal.cat = fields['cat']
         meal.descr = fields['descr']
         meal.photo_url = fields['photo_url']
         meal.price = fields['price']

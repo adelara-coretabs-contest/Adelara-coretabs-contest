@@ -165,7 +165,7 @@ header, footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    color: #599d7b;
+    color: #3d7157;
     margin: 0 auto;
 }
 
@@ -659,8 +659,8 @@ img {
 
 @media only screen and (max-width: 600px) {
     #hangry {
-      left: 20%;
-      top: 53%;
+      left: 33%;
+      top: 61%;
     }
 
     #details {
@@ -712,5 +712,30 @@ img {
 
     #home {
         width: 100px !important;
+    }
+
+    #adelara-title {
+        font-size: 0.5em;
+    }
+
+    #logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    #hamburger-menu div {
+        height: 3px;
+    }
+
+    #footer {
+        font-size: .2em;
+    }
+
+    #hangry h2 {
+        font-size: 1em;
+    }
+
+    #hangry p {
+        font-size: .5em;
     }
 }

@@ -266,9 +266,9 @@ header, footer {
 }
 
 .center {
-    position: absolute;
+    position: relative;
     top: 25%;
-    left: 25%;
+    text-align: center;
 }
 
 #cloud {

@@ -165,10 +165,11 @@ def details(id):
             app.current_id += 1
             orders.add(new_order)
             orders.get_all()
-            return redirect(url_for("index"))
+            return render_template("success.html", order=new_order)
 
     else:
         return redirect(url_for('oops'))
+
 
 @app.route('/orders')
 def list_orders():

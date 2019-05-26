@@ -359,6 +359,10 @@ header, footer {
     margin: 38px 0 20px 0;
 }
 
+#add-form {
+    bottom: 0;
+}
+
 
 
 input, textarea {
@@ -588,6 +592,29 @@ img {
 
 }
 
+.margin-auto {
+    margin: auto;
+}
+
+#add-ings {
+
+}
+#add-new-ing-btn {
+    width: 40px;
+    height: 32px;
+    color: #007d3f;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+#add-new-ing-btn:hover {
+    color: #fff;
+}
+
+.height-auto {
+    height: auto;
+}
 .role {
     margin-top: 20px;
 }

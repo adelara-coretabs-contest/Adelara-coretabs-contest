@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
-</head>
-<body>
-    <h1>Add meal</h1>
-    <div>
-        <form action="{{url_for('add_meal')}}" method="POST">
-            <input type="text" name="name" id="" placeholder="Enter the meal name">
-            <input type="text" name="photo" id="" placeholder="Enter the image url here">
-            <input type="text" name="ings[]" id="" placeholder="Enter an ingredient here">
-            <input type="text" name="ings[]" id="" placeholder="Enter an ingredient here">
-            <input type="text" name="ings[]" id="" placeholder="Enter an ingredient here">
-            <input type="text" name="price" id="" placeholder="How much it costs?">
-            <input type="submit" value="Create" id="button">
-        </form>
+{% extends 'base.html' %}
 
-    </div>
-</body>
-</html>
+{% block content %}
+    <main id="meal" class="menu margin-auto">
+
+        <div class="meal-details shadow height-auto" id="">
+                    <div id="add-form" class="form">
+                        <form  action="{{url_for('add_meal')}}" method="POST">
+                            <input required type="text" name="name" id="" placeholder="Enter the meal name">
+                            <input required type="text" name="photo" id="" placeholder="Enter the image url here">
+                            <div id="add-ings">
+                                <label id="ing-label" for="ing[]">
+                                    Ingredients
+                                    <input type="text" name="ings[]">
+                                    <input type="text" name="ings[]">
+                                    <input type="text" name="ings[]">
+                                </label>
+                                <div id="add-new-ing-btn" onclick="addIng()">+</div>
+                            </div>
+                            <input required type="number" name="price" id="" placeholder="How much it costs?">
+                            <input id="order-button" class="submit-button" type="submit" value="Create" id="button">
+                        </form>
+                    </div>
+            
+                </figcaption>
+            </div>
+        </div>
+    </main>
+{% endblock %}

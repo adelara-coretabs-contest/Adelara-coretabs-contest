@@ -27,7 +27,7 @@
                     <div class="submit-button" id="submit-button" onclick="toggleForm('submit-button')">Order now</div>
                     <div class="form hidden">
                         <h4>Please, tell us where you are?</h4>
-                        <form id="order-form"autocomplete="off" action="{{url_for('details', id=meal.id)}}" method="POST">
+                        <form id="order-form" autocomplete="off" action="{{url_for('details', id=meal.id)}}" method="POST">
                             <input required type="text" name="user" id="inpt-user-name" placeholder="Please enter your name">
                             <input required type="number" min="1" name="quantity" id="inpt-quantity" placeholder="Enter quantity here!">
                             <textarea required name="address" id="address" cols="30" rows="4" placeholder="Type your address here!"></textarea>

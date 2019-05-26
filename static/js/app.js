@@ -41,3 +41,12 @@ hamburger.addEventListener('click', ()=> {
     navMenu.classList.toggle('closed');
 
 });
+
+
+let ings = document.querySelector('#ing-label');
+let addIng = () => {
+    let newIng = document.createElement('input');
+    newIng.setAttribute('type', 'text');
+    newIng.setAttribute('name', 'ing[]');
+    ings.append(newIng);
+}

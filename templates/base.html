@@ -17,7 +17,7 @@
     <header class="header">
         <nav id="nav" class="flex">
             <div id="logo">
-                <a href="{{ url_for('index') }}">
+                <a href="/">
                     <img src="{{ url_for('static', filename='img/chef.png') }}" alt="">
                 </a>
             </div>
@@ -32,8 +32,13 @@
                 {% if admin %}
                     <a href="{{ url_for('list_orders') }}">List of orders</a>
                     <a href="{{ url_for('add_meal') }}">Add a new meal</a>
+                    <div class="role">
+                        <a href="{{ url_for('index') }}">Toggle to user</a>
+                    </div>
                     {% else %}
-                    <a href="{{ url_for('add_meal') }}">I'm Admin</a>
+                    <div class="role">
+                        <a href="{{ url_for('admin_role') }}">I'm Admin</a>
+                    </div>
                     {% endif %}
                 </ul>
             </div>

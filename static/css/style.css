@@ -725,4 +725,20 @@ img {
     #hangry p {
         font-size: .5em;
     }
+    
+    .form {
+        bottom: 60px;
+    }
+
+    .form h4 {
+        font-size: .9em;
+    }
+
+    #nav-menu {
+        margin-top: 38px;
+    }
+
+    #meal-name {
+        font-size: 1.5em;
+    }
 }

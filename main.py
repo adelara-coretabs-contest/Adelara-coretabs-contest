@@ -137,7 +137,7 @@ orders.get_all()
 @app.route('/')
 def index():
     title = 'Adelara fast-food chef'
-    return render_template('meals.html', admin=False, meals=dummy_meals, title=title)
+    return render_template('meals.html', admin=True, meals=dummy_meals, title=title)
 
 @app.route('/404')
 def oops():

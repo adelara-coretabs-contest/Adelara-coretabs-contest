@@ -29,12 +29,14 @@
             </div>
         </nav>
         <div id="nav-menu" class="closed">
+            <ul>
             {% if admin %}
-            <a href="{{ url_for('list_orders') }}">List of orders</a>
-            <a href="{{ url_for('add_meal') }}">Add a new meal</a>
-            {% else %}
-            <a href="{{ url_for('add_meal') }}">I'm Admin</a>
-            {% endif %}
+                <a href="{{ url_for('list_orders') }}">List of orders</a>
+                <a href="{{ url_for('add_meal') }}">Add a new meal</a>
+                {% else %}
+                <a href="{{ url_for('add_meal') }}">I'm Admin</a>
+                {% endif %}
+            </ul>
         </div>
     </header>
     {% endblock %}

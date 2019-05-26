@@ -73,11 +73,23 @@ header, footer {
 
 #nav-menu {
     position: absolute;
-    width: 275px;
-    height: 100vh;
-    background-color: #599d7b;
+    width: 175px;
+    height: auto;
+    background-color: #79807782;
     margin-top: 72px;
     right: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: #8a8787 1px 4.2px 5px;
+
+}
+#nav-menu ul {
+    display: block;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+#nav-menu a:hover {
+    color: #488064;
 }
 
 .closed {

@@ -35,3 +35,9 @@ let toggleForm = (element)=> {
     }
     console.log(thisElement)
 }
+
+hamburger.addEventListener('click', ()=> {
+    let navMenu = document.querySelector('#nav-menu');
+    navMenu.classList.toggle('closed');
+
+});

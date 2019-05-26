@@ -10,9 +10,7 @@ window.addEventListener('load', ()=> {
     console.log('loaded', loader)
 });
 
-
 let hamburger = document.querySelector('#hamburger-menu');
-
 hamburger.addEventListener('click', () => {
     console.log(hamburger.children[0]);
     hamburger.classList.toggle('close')
@@ -45,9 +43,7 @@ let toggleForm = (element)=> {
 hamburger.addEventListener('click', ()=> {
     let navMenu = document.querySelector('#nav-menu');
     navMenu.classList.toggle('closed');
-
 });
-
 
 let ings = document.querySelector('#ing-label');
 let addIng = () => {

@@ -6,7 +6,6 @@ import datetime
 app = Flask(__name__)
 
 
-
 dummy_meals = [
     Meals(
         1,
@@ -125,7 +124,6 @@ orders.add(Orders(1, dummy_meals[0], 3, 'Adel', 'my address', 'today'))
 orders.get_all()
 
 
-
 @app.route('/')
 def index():
     title = 'Adelara fast-food chef'
@@ -135,7 +133,6 @@ def index():
 def admin_role():
     title = 'Adelara fast-food chef'
     return render_template('meals.html', admin=True, meals=dummy_meals, title=title)
-
 
 
 @app.route('/404')
@@ -175,6 +172,7 @@ def details(id):
 def list_orders():
     title = 'Adelara|Order'
     return render_template('orders.html', orders=dummy_orders, title=title)
+
 
 @app.route('/add/meal', methods=["GET", "POST"])
 def add_meal():

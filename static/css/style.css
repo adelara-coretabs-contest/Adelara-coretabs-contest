@@ -77,8 +77,8 @@ header, footer {
     right: 0;
     border-radius: 0 0 10px 10px;
     box-shadow: #8a8787 1px 4.2px 5px;
-
 }
+
 #nav-menu ul {
     display: block;
     padding: 0 20px;
@@ -96,9 +96,6 @@ header, footer {
 #adelara-title {
     font-size: 1em;
     color: #fff;
-}
-
-#adelara-title span{
 }
 
 #logo {
@@ -145,7 +142,6 @@ header, footer {
     width: 100%;
     height: 100vh;
     background-color: #e0f3dd;
-    /* background-image: url('../img/shape7.svg'); */
     background-attachment: fixed;
     background-size: cover;
     font-size: 1.2em;    
@@ -158,7 +154,6 @@ header, footer {
     bottom: 0;
     width: auto;
     height: 82vh;
-    
 }
 
 #hangry {
@@ -205,7 +200,6 @@ header, footer {
 }
 
 #line {
-    
     margin: 0 auto;
     position: relative;
 }
@@ -222,7 +216,6 @@ header, footer {
     display: flex;
     flex-flow: wrap
 }
-
 
 .meal-details {
     margin: 100px auto; 
@@ -273,7 +266,6 @@ header, footer {
     height: 100%;
     width: auto;
     position: absolute;
-    /* transform: rotate(180deg); */
 }
 
 #details {
@@ -324,6 +316,7 @@ header, footer {
   box-shadow: 0 35px 20px #777;
   transform: rotate(-8deg);
 }
+
 .shadow:after {
   transform: rotate(8deg);
   right: 10px;
@@ -361,8 +354,6 @@ header, footer {
     bottom: 0;
 }
 
-
-
 input, textarea {
     width: 100%;
     background-color: #fff;
@@ -395,7 +386,6 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
-
 
 input[type="submit"] {
     position: relative;
@@ -462,7 +452,6 @@ input[type="submit"] {
     border-radius: 5px;
     font-size: .7em;
     text-align: center;
-    
 }
 
 .details-button:hover {
@@ -521,7 +510,6 @@ img {
 .item:hover figcaption div {
     display: block;
 }
-
 
 #success-chef {
     position: absolute;
@@ -655,7 +643,6 @@ img {
     text-align: center;
     
 }
-
 
 @media only screen and (max-width: 600px) {
     #hangry {

@@ -597,6 +597,10 @@ img {
     font-weight: bold;
 }
 
+#ingredients span {
+    font-weight: bold;
+}
+
 #footer {
     position: fixed;
     bottom: 0;

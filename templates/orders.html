@@ -1,23 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
-</head>
-<body>
-    <h1>List of orders</h1>
-    <div>
-        {% for order in orders %}
-            <h2>Client: {{order.user}}</h2>
-            <div>Meal: {{order.meal_name}}</div>
-            <div>Quantity: {{order.quantity}}</div>
-            <div>Amount: ${{order.amount}}</div>
-            <div>Address: {{order.address}}</div>
-            <div>Date: {{order.date.hour}}: {{order.date.minute}}</div>
+{%extends 'base.html' %}
+{% block content %}
+<main id="meal" class="menu">
+    {% for order in orders %}
+        <div class="meal-details shadow" id="">
+            <div id="details" class="flex">
+                <figure>
+                    <div>
+                        <img id="cloud" src="{{ url_for('static', filename='img/cloud-v.png') }}" alt="">
+                    </div>
+                    <img id="meal-pic" src="{{order.meal_photo}}" alt="{{order.meal_name}}">
+                </figure>
+                <figcaption class="">
+                    <h4 class="" id="meal-name">{{order.meal_name}}</h4>
+                    <div class="" id="meal-price">
+                        <div class="center">${{order.amount}}</div>
+                    </div>
+                    <div id="ingredients">
+                        <h5>Order for {{order.user}}</h5>
+                        <ul>
+                            <li><span>Quantity: </span>{{order.quantity}}</li>
+                            <li><span>Address: </span>{{order.address}}</li>
+                            <li><span>Time: </span>{{order.date}}</li>
+                        </ul>
+                    </div>
+                </figcaption>
+            </div>
+        </div>
         {% endfor %}
-            <a id="back" href="{{ url_for('index')}}">Back</a>
-    </div>
-</body>
-</html>
+    </main>
+{% endblock %}

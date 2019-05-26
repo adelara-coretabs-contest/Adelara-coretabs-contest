@@ -3,6 +3,7 @@ class Orders:
         self.id = id
         self.meal_id = meal.id
         self.meal_name = meal.name
+        self.meal_photo = meal.photo_url
         self.quantity = quantity
         self.user = user
         self.address = address

@@ -545,6 +545,10 @@ img {
     color: #488064;
 }
 
+.message #oops {
+    color: #bf0808;
+}
+
 #success-container .submit-button {
     left: 12px;
     width: 200px;

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <main id="success-container" class="menu">
+        <div class="meal-details shadow">
+            <div class="message">
+                <h4 id="title">Right choice!</h4>
+                <div>Thank you dear {{order.user}}</div>
+                <div>We value the trust you have put in our delivery service</div>
+            </div>
+            <img id="success-chef" src="{{url_for('static', filename='img/success.png')}}" alt="">
+            
+            <a href="/">
+                <div id="home" class="submit-button">
+                Return home
+                </div>
+            </a>
+        </div>
+    </main>
+{% endblock %}

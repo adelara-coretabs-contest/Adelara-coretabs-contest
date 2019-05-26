@@ -588,6 +588,15 @@ img {
 
 }
 
+.role {
+    margin-top: 20px;
+}
+
+.role a {
+    color: #007d3f;
+    font-weight: bold;
+}
+
 #footer {
     position: fixed;
     bottom: 0;

@@ -156,7 +156,7 @@ app.current_id = 1
 @app.route('/details/<int:id>', methods=["GET", "POST"])
 def details(id):
     meal = meals.get_details(id)
-    title = 'Adelara|'+meal.name
+    title = 'Adelara|Meal details'
 
     if hasattr(meal, 'id'):
         if request.method == "GET":
